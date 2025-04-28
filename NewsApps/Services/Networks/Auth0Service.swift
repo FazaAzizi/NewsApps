@@ -66,6 +66,7 @@ class Auth0Service: AuthenticationService {
                         do {
                             let user = try self.extractUser(from: credentials.idToken)
                             self.saveLoginTime()
+                            self.saveUser(user)
                             promise(.success(user))
                         } catch {
                             promise(.failure(error))
@@ -125,6 +126,21 @@ class Auth0Service: AuthenticationService {
         let pictureURL = pictureString != nil ? URL(string: pictureString!) : nil
         
         return User(id: id, name: name, email: email, picture: pictureURL)
+    }
+    
+    private func saveUser(_ user: User) {
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(user) {
+            UserDefaults.standard.set(encoded, forKey: "savedUser")
+        }
+    }
+    
+    func loadUser() -> User? {
+        if let savedUserData = UserDefaults.standard.data(forKey: "savedUser") {
+            let decoder = JSONDecoder()
+            return try? decoder.decode(User.self, from: savedUserData)
+        }
+        return nil
     }
     
     private func saveLoginTime() {

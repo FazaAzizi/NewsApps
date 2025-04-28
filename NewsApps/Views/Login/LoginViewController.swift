@@ -74,7 +74,9 @@ class LoginViewController: UIViewController {
         viewModel.$isAuthenticated
             .receive(on: DispatchQueue.main)
             .sink { [weak self] isAuthenticated in
-                //Move to new page
+                if isAuthenticated {
+                    self?.navigateToHome()
+                }
             }
             .store(in: &cancellables)
 
@@ -84,6 +86,17 @@ class LoginViewController: UIViewController {
                 self?.errorLabel.text = error
             }
             .store(in: &cancellables)
+    }
+    
+    private func navigateToHome() {
+        let homeViewModel = HomeViewModel() 
+        let homeVC = HomeViewController(viewModel: homeViewModel)
+        if let sceneDelegate = UIApplication.shared.connectedScenes
+            .first?.delegate as? SceneDelegate,
+           let window = sceneDelegate.window {
+            window.rootViewController = homeVC
+            window.makeKeyAndVisible()
+        }
     }
 
     @objc private func loginTapped() {

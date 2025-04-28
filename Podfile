@@ -4,7 +4,8 @@ target 'NewsApps' do
 
   # Pods for NewsApps
   pod 'Alamofire', '~> 5.0'
-  pod 'SDWebImage'
+  pod 'Kingfisher'
   pod 'Auth0', '~> 2.0'
+  pod 'netfox'
 
 end

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-SemiBold.ttf">
+            <string>Montserrat-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="NewsApps" customModuleProvider="target">
+            <connections>
+                <outlet property="greetingLabel" destination="l7T-ki-yNH" id="xFk-C5-dxx"/>
+                <outlet property="tableView" destination="07e-iG-a2f" id="9iS-PR-0ZE"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7T-ki-yNH">
+                    <rect key="frame" x="20" y="79" width="353" height="24.666666666666671"/>
+                    <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="07e-iG-a2f">
+                    <rect key="frame" x="0.0" y="133.66666666666669" width="393" height="684.33333333333326"/>
+                    <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="07e-iG-a2f" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="5f6-G8-EMq"/>
+                <constraint firstItem="07e-iG-a2f" firstAttribute="top" secondItem="l7T-ki-yNH" secondAttribute="bottom" constant="30" id="LUb-LP-e6c"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="07e-iG-a2f" secondAttribute="trailing" id="NdE-RV-sq5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="l7T-ki-yNH" secondAttribute="trailing" constant="20" id="Qtk-Hy-SwW"/>
+                <constraint firstItem="l7T-ki-yNH" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="VxE-J0-qFa"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="07e-iG-a2f" secondAttribute="bottom" id="dzB-gr-Mr8"/>
+                <constraint firstItem="l7T-ki-yNH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="zJl-7E-SKz"/>
+            </constraints>
+            <point key="canvasLocation" x="76" y="21"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
