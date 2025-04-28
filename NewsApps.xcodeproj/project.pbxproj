@@ -52,6 +52,86 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A758941A2DBF594500F60A01 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				A7ECCA0D2DBF5386001A29D5 /* AppDelegate.swift */,
+				A7ECCA0F2DBF5386001A29D5 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		A758941B2DBF594E00F60A01 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A758941C2DBF595400F60A01 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A758941D2DBF595C00F60A01 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A758941E2DBF596600F60A01 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A7ECCA192DBF5388001A29D5 /* Assets.xcassets */,
+				A7ECCA1E2DBF5388001A29D5 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A758941F2DBF597100F60A01 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				A7ECCA112DBF5386001A29D5 /* ViewController.swift */,
+				A7ECCA132DBF5386001A29D5 /* Main.storyboard */,
+				A7ECCA1B2DBF5388001A29D5 /* LaunchScreen.storyboard */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		A75894202DBF597D00F60A01 /* Ulities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Ulities;
+			sourceTree = "<group>";
+		};
+		A75894212DBF59A300F60A01 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A75894232DBF59B800F60A01 /* Storages */,
+				A75894222DBF59B200F60A01 /* Networks */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A75894222DBF59B200F60A01 /* Networks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networks;
+			sourceTree = "<group>";
+		};
+		A75894232DBF59B800F60A01 /* Storages */ = {
+			isa = PBXGroup;
+			children = (
+				A7ECCA162DBF5386001A29D5 /* NewsApps.xcdatamodeld */,
+			);
+			path = Storages;
+			sourceTree = "<group>";
+		};
 		A7ECCA012DBF5386001A29D5 = {
 			isa = PBXGroup;
 			children = (
@@ -73,14 +153,14 @@
 		A7ECCA0C2DBF5386001A29D5 /* NewsApps */ = {
 			isa = PBXGroup;
 			children = (
-				A7ECCA0D2DBF5386001A29D5 /* AppDelegate.swift */,
-				A7ECCA0F2DBF5386001A29D5 /* SceneDelegate.swift */,
-				A7ECCA112DBF5386001A29D5 /* ViewController.swift */,
-				A7ECCA132DBF5386001A29D5 /* Main.storyboard */,
-				A7ECCA192DBF5388001A29D5 /* Assets.xcassets */,
-				A7ECCA1B2DBF5388001A29D5 /* LaunchScreen.storyboard */,
-				A7ECCA1E2DBF5388001A29D5 /* Info.plist */,
-				A7ECCA162DBF5386001A29D5 /* NewsApps.xcdatamodeld */,
+				A758941A2DBF594500F60A01 /* Application */,
+				A758941D2DBF595C00F60A01 /* Models */,
+				A758941E2DBF596600F60A01 /* Resources */,
+				A75894212DBF59A300F60A01 /* Services */,
+				A758941F2DBF597100F60A01 /* SupportingFiles */,
+				A75894202DBF597D00F60A01 /* Ulities */,
+				A758941C2DBF595400F60A01 /* ViewModels */,
+				A758941B2DBF594E00F60A01 /* Views */,
 			);
 			path = NewsApps;
 			sourceTree = "<group>";
@@ -91,7 +171,6 @@
 				8F98BF3A37D8A73179D80F0C /* Pods-NewsApps.debug.xcconfig */,
 				DA1937EFC6401FEDCD4E1701 /* Pods-NewsApps.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -367,8 +446,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M843HJCGXQ;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = NewsApps/Info.plist;
+				INFOPLIST_FILE = NewsApps/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -396,8 +476,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M843HJCGXQ;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = NewsApps/Info.plist;
+				INFOPLIST_FILE = NewsApps/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
