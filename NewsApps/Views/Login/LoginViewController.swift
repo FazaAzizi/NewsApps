@@ -28,9 +28,12 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var emailContainerView: UIView!
     @IBOutlet weak var passwordContainerView: UIView!
+    @IBOutlet weak var passwordEyeImageView: UIImageView!
     
     private let viewModel: LoginViewModel
     private var cancellables = Set<AnyCancellable>()
+    
+    private var isPasswordVisible = false
 
     init(viewModel: LoginViewModel) {
         self.viewModel = viewModel
@@ -44,6 +47,11 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         bindViewModel()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 
     private func setupUI() {
@@ -61,10 +69,16 @@ class LoginViewController: UIViewController {
         passwordContainerView.layer.borderWidth = 1.0
         passwordContainerView.layer.cornerRadius = 10.0
         
+        passwordEyeImageView.isUserInteractionEnabled = true
+        let passwordEyeTap = UITapGestureRecognizer(target: self, action: #selector(passwordEyeTapped))
+        passwordEyeImageView.addGestureRecognizer(passwordEyeTap)
+        passwordEyeImageView.image = UIImage(systemName: "eye.slash")
+        
         loginButton.layer.cornerRadius = 8
         loginButton.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
         
         registerButton.layer.cornerRadius = 8
+        registerButton.addTarget(self, action: #selector(registerTapped), for: .touchUpInside)
 
         containerView.layer.cornerRadius = 20
         containerView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
@@ -109,7 +123,17 @@ class LoginViewController: UIViewController {
         viewModel.loginWithCredentials(email: email, password: password)
     }
     
+    @objc private func passwordEyeTapped() {
+        isPasswordVisible.toggle()
+        passwordTextField.isSecureTextEntry = !isPasswordVisible
+        passwordEyeImageView.image = UIImage(systemName: isPasswordVisible ? "eye" : "eye.slash")
+    }
+    
     @objc private func registerTapped() {
-        //Move to register page
+        let authService = Auth0Service()
+        let registerVM = RegisterViewModel(authService: authService)
+        let registerVC = RegisterViewController(viewModel: registerVM)
+        
+        navigationController?.pushViewController(registerVC, animated: true)
     }
 }

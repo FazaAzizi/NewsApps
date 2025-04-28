@@ -30,6 +30,7 @@
                 <outlet property="loginButton" destination="Mnn-Yr-WgB" id="tlw-P3-iEo"/>
                 <outlet property="pageLabel" destination="RUD-fi-Yow" id="bb2-jg-6B0"/>
                 <outlet property="passwordContainerView" destination="gVe-Hp-caq" id="Yxi-HX-Kca"/>
+                <outlet property="passwordEyeImageView" destination="FHn-Qr-ctA" id="wkL-Hy-ZHL"/>
                 <outlet property="passwordLabel" destination="5PC-m1-v2d" id="r3M-DR-6ld"/>
                 <outlet property="passwordTextField" destination="LWw-Oz-sBV" id="Oyc-1g-3nC"/>
                 <outlet property="registerButton" destination="NxY-fw-rop" id="HtK-Bf-yl4"/>
@@ -42,16 +43,28 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEWS APPS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1t6-Ha-XOy">
-                    <rect key="frame" x="20" y="59" width="353" height="27"/>
-                    <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="22"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IaY-d3-kEq">
+                    <rect key="frame" x="97.000000000000014" y="79" width="199.33333333333337" height="50"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="news_icon" translatesAutoresizingMaskIntoConstraints="NO" id="C6y-Om-cvt">
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="WzT-Ss-mZS"/>
+                                <constraint firstAttribute="width" constant="50" id="z8E-ty-NOG"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NEWS APPS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1t6-Ha-XOy">
+                            <rect key="frame" x="60.000000000000014" y="11.666666666666671" width="139.33333333333337" height="27"/>
+                            <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="22"/>
+                            <color key="textColor" name="textPrimary"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi, Welcome!!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RUD-fi-Yow">
-                    <rect key="frame" x="20" y="106" width="353" height="21"/>
+                    <rect key="frame" x="20" y="159" width="353" height="21"/>
                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="17"/>
-                    <nil key="textColor"/>
+                    <color key="textColor" name="textPrimary"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7CC-un-CVE">
@@ -66,7 +79,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2jQ-i7-JkC">
                                             <rect key="frame" x="0.0" y="0.0" width="353" height="17.333333333333332"/>
                                             <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="14"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" name="textPrimary"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bwH-SA-wYP">
@@ -98,26 +111,36 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5PC-m1-v2d">
                                             <rect key="frame" x="0.0" y="0.0" width="353" height="17.333333333333332"/>
                                             <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="14"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" name="textPrimary"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gVe-Hp-caq">
                                             <rect key="frame" x="0.0" y="27.333333333333314" width="353" height="40"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LWw-Oz-sBV">
-                                                    <rect key="frame" x="10" y="0.0" width="333" height="40"/>
+                                                    <rect key="frame" x="10" y="0.0" width="303" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="7Wb-g1-Bsj"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" textContentType="password"/>
                                                 </textField>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eye" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="FHn-Qr-ctA">
+                                                    <rect key="frame" x="313" y="7.3333333333333339" width="30" height="26"/>
+                                                    <color key="tintColor" name="textSecondary"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="Grp-e7-pcQ"/>
+                                                        <constraint firstAttribute="height" constant="30" id="Vcz-Ze-hBT"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="LWw-Oz-sBV" secondAttribute="trailing" constant="10" id="1rN-Ge-SuG"/>
                                                 <constraint firstAttribute="bottom" secondItem="LWw-Oz-sBV" secondAttribute="bottom" id="3in-IJ-l9o"/>
+                                                <constraint firstAttribute="trailing" secondItem="FHn-Qr-ctA" secondAttribute="trailing" constant="10" id="8Vl-Zg-dKm"/>
                                                 <constraint firstItem="LWw-Oz-sBV" firstAttribute="leading" secondItem="gVe-Hp-caq" secondAttribute="leading" constant="10" id="IeP-ou-dX1"/>
+                                                <constraint firstItem="FHn-Qr-ctA" firstAttribute="centerY" secondItem="gVe-Hp-caq" secondAttribute="centerY" id="X59-aa-7r4"/>
+                                                <constraint firstItem="FHn-Qr-ctA" firstAttribute="leading" secondItem="LWw-Oz-sBV" secondAttribute="trailing" id="bTg-SI-V0m"/>
                                                 <constraint firstAttribute="height" constant="40" id="btG-HN-mo5"/>
                                                 <constraint firstItem="LWw-Oz-sBV" firstAttribute="top" secondItem="gVe-Hp-caq" secondAttribute="top" id="jp9-Ub-vkm"/>
                                             </constraints>
@@ -181,20 +204,21 @@
             <color key="backgroundColor" name="darkOrange"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RUD-fi-Yow" secondAttribute="trailing" constant="20" id="Hhv-8O-uvj"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1t6-Ha-XOy" secondAttribute="trailing" constant="20" id="IS0-G4-921"/>
                 <constraint firstItem="RUD-fi-Yow" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="IVI-Tv-tRh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7CC-un-CVE" secondAttribute="trailing" id="Ipn-7u-Pte"/>
-                <constraint firstItem="1t6-Ha-XOy" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="KYh-1n-crC"/>
-                <constraint firstItem="1t6-Ha-XOy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Wo2-rG-ujc"/>
+                <constraint firstItem="RUD-fi-Yow" firstAttribute="top" secondItem="IaY-d3-kEq" secondAttribute="bottom" constant="30" id="JXl-hi-Wt9"/>
+                <constraint firstItem="IaY-d3-kEq" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Kh4-oa-aOe"/>
                 <constraint firstAttribute="bottom" secondItem="7CC-un-CVE" secondAttribute="bottom" id="Zym-nz-GyB"/>
-                <constraint firstItem="RUD-fi-Yow" firstAttribute="top" secondItem="1t6-Ha-XOy" secondAttribute="bottom" constant="20" id="qE5-qN-DhA"/>
                 <constraint firstItem="7CC-un-CVE" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.7" id="uZo-1G-ahC"/>
+                <constraint firstItem="IaY-d3-kEq" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="x6V-GH-NIN"/>
                 <constraint firstItem="7CC-un-CVE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="y1y-AE-M4g"/>
             </constraints>
             <point key="canvasLocation" x="62" y="20"/>
         </view>
     </objects>
     <resources>
+        <image name="eye" catalog="system" width="128" height="79"/>
+        <image name="news_icon" width="512" height="512"/>
         <namedColor name="accentYellow">
             <color red="1" green="0.81960784313725488" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -209,6 +233,9 @@
         </namedColor>
         <namedColor name="textPrimary">
             <color red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="textSecondary">
+            <color red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -49,6 +49,9 @@
 		A75894792DBF8E9E00F60A01 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75894772DBF8E9E00F60A01 /* Constants.swift */; };
 		A758947A2DBF8E9E00F60A01 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75894782DBF8E9E00F60A01 /* NetworkManager.swift */; };
 		A758947E2DBF8EED00F60A01 /* HomeServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A758947D2DBF8EED00F60A01 /* HomeServiceProtocol.swift */; };
+		A770CC912DBFD0280057788E /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A770CC902DBFD0280057788E /* RegisterViewModel.swift */; };
+		A770CC942DBFD0330057788E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A770CC922DBFD0330057788E /* RegisterViewController.swift */; };
+		A770CC952DBFD0330057788E /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A770CC932DBFD0330057788E /* RegisterViewController.xib */; };
 		A7ECCA0E2DBF5386001A29D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ECCA0D2DBF5386001A29D5 /* AppDelegate.swift */; };
 		A7ECCA102DBF5386001A29D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ECCA0F2DBF5386001A29D5 /* SceneDelegate.swift */; };
 		A7ECCA122DBF5386001A29D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7ECCA112DBF5386001A29D5 /* ViewController.swift */; };
@@ -104,6 +107,9 @@
 		A75894772DBF8E9E00F60A01 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A75894782DBF8E9E00F60A01 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A758947D2DBF8EED00F60A01 /* HomeServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeServiceProtocol.swift; sourceTree = "<group>"; };
+		A770CC902DBFD0280057788E /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		A770CC922DBFD0330057788E /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		A770CC932DBFD0330057788E /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		A7ECCA0A2DBF5386001A29D5 /* NewsApps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApps.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7ECCA0D2DBF5386001A29D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7ECCA0F2DBF5386001A29D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +142,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A73232A32DBFCFDE00F69D66 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				A770CC902DBFD0280057788E /* RegisterViewModel.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		A73232A42DBFCFE500F69D66 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				A770CC922DBFD0330057788E /* RegisterViewController.swift */,
+				A770CC932DBFD0330057788E /* RegisterViewController.xib */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
 		A758941A2DBF594500F60A01 /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +171,7 @@
 		A758941B2DBF594E00F60A01 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A73232A42DBFCFE500F69D66 /* Register */,
 				A75894622DBF87EF00F60A01 /* Home */,
 				A75894372DBF653700F60A01 /* Login */,
 			);
@@ -157,6 +181,7 @@
 		A758941C2DBF595400F60A01 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				A73232A32DBFCFDE00F69D66 /* Register */,
 				A75894632DBF87F800F60A01 /* Home */,
 				A75894362DBF652E00F60A01 /* Login */,
 			);
@@ -447,6 +472,7 @@
 				A7ECCA152DBF5386001A29D5 /* Main.storyboard in Resources */,
 				A75894562DBF815A00F60A01 /* Montserrat-Thin.ttf in Resources */,
 				A758945B2DBF815A00F60A01 /* Montserrat-ExtraLightItalic.ttf in Resources */,
+				A770CC952DBFD0330057788E /* RegisterViewController.xib in Resources */,
 				A758945A2DBF815A00F60A01 /* Montserrat-SemiBold.ttf in Resources */,
 				A75894252DBF5C9900F60A01 /* Auth0.plist in Resources */,
 				A75894682DBF88B400F60A01 /* HomeViewController.xib in Resources */,
@@ -506,6 +532,7 @@
 				A758946F2DBF88EA00F60A01 /* ItemCollectionViewCell.swift in Sources */,
 				A75894792DBF8E9E00F60A01 /* Constants.swift in Sources */,
 				A75894762DBF8CBF00F60A01 /* HomeViewModel.swift in Sources */,
+				A770CC942DBFD0330057788E /* RegisterViewController.swift in Sources */,
 				A758943C2DBF814600F60A01 /* UIFont+Ext.swift in Sources */,
 				A758942F2DBF629100F60A01 /* Auth0Service.swift in Sources */,
 				A758942B2DBF623B00F60A01 /* Credentials.swift in Sources */,
@@ -525,6 +552,7 @@
 				A75894342DBF652B00F60A01 /* LoginViewController.swift in Sources */,
 				A75894672DBF88B400F60A01 /* HomeViewController.swift in Sources */,
 				A75894312DBF633600F60A01 /* LoginViewModel.swift in Sources */,
+				A770CC912DBFD0280057788E /* RegisterViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

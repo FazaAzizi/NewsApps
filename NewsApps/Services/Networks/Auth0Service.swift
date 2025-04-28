@@ -78,6 +78,28 @@ class Auth0Service: AuthenticationService {
         }.eraseToAnyPublisher()
     }
     
+    func register(name: String, email: String, password: String) -> AnyPublisher<Void, Error> {
+        return Future<Void, Error> { promise in
+            Auth0
+                .authentication()
+                .signup(
+                    email: email,
+                    password: password,
+                    connection: "Username-Password-Authentication",
+                    userMetadata: ["name": name]
+                )
+                .start { result in
+                    switch result {
+                    case .success:
+                        promise(.success(()))
+                    case .failure(let error):
+                        promise(.failure(error))
+                    }
+                }
+        }
+        .eraseToAnyPublisher()
+    }
+    
     func checkSession() -> AnyPublisher<User?, Error> {
         return Future<User?, Error> { promise in
             if let loginTime = UserDefaults.standard.object(forKey: "loginTimestamp") as? Date {
