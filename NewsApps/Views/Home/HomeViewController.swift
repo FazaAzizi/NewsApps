@@ -41,9 +41,14 @@ class HomeViewController: UIViewController {
         viewModel.fetchAll()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
     private func setupTableView() {
         tableView.register(UINib(nibName: "SectionItemTableViewCell", bundle: nil),
-                         forCellReuseIdentifier: "SectionItemTableViewCell")
+                           forCellReuseIdentifier: "SectionItemTableViewCell")
         tableView.separatorStyle = .none
         tableView.dataSource = self
         tableView.delegate = self
@@ -72,7 +77,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate, Sectio
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1 
+        1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -102,7 +107,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate, Sectio
         header.configure(title: Section(rawValue: section)?.title ?? "", section: section, delegate: self)
         return header
     }
-
+    
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         40
@@ -119,7 +124,17 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate, Sectio
 
 extension HomeViewController: SectionItemTableViewCellDelegate {
     func sectionItemCell(_ cell: SectionItemTableViewCell, didSelectItem item: NewsItem, in section: HomeViewController.Section) {
-        print("Item: \(item.title ?? "") in section: \(section.title)")
+        guard let id = item.id else { return }
+        let sectionType: NewsSectionType
+        switch section {
+        case .articles: sectionType = .article
+        case .blogs: sectionType = .blog
+        case .reports: sectionType = .report
+        }
+        let detailVM = NewsDetailViewModel(sectionType: sectionType)
+        detailVM.fetchDetail(id: id, section: sectionType)
+        let detailVC = NewsDetailViewController(viewModel: detailVM)
+        navigationController?.pushViewController(detailVC, animated: true)
     }
     
     func sectionItemCellDidTapLoad(_ cell: SectionItemTableViewCell, in section: HomeViewController.Section) {

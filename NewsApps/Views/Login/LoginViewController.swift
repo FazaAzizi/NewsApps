@@ -103,12 +103,13 @@ class LoginViewController: UIViewController {
     }
     
     private func navigateToHome() {
-        let homeViewModel = HomeViewModel() 
+        let homeViewModel = HomeViewModel()
         let homeVC = HomeViewController(viewModel: homeViewModel)
+        let nav = UINavigationController(rootViewController: homeVC)
         if let sceneDelegate = UIApplication.shared.connectedScenes
             .first?.delegate as? SceneDelegate,
            let window = sceneDelegate.window {
-            window.rootViewController = homeVC
+            window.rootViewController = nav
             window.makeKeyAndVisible()
         }
     }
